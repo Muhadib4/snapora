@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-type="software">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f5f1e8">
+    <meta name="description" content="Capture event photos and videos with Snapora, then review and save your picks.">
+    <meta name="page-type" content="software">
+    <meta name="site-kind" content="software">
+    <title>Capture with Snapora</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="capture.js" defer></script>
+  </head>
+  <body class="capture-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header capture-header">
+      <a class="wordmark" href="index.html" aria-label="Snapora home">snapora<span aria-hidden="true">.</span></a>
+      <a class="text-link back-link" href="index.html">Back to home</a>
+    </header>
+
+    <main id="main" class="capture-main">
+      <section class="capture-heading" aria-labelledby="capture-title">
+        <p class="section-kicker">Your event booth</p>
+        <h1 id="capture-title">Capture this moment.</h1>
+        <p>Allow camera access when you are ready. Snapora does not open your camera until you ask.</p>
+      </section>
+
+      <section class="capture-layout" aria-label="Camera and your captures">
+        <div class="camera-column">
+          <div class="camera-panel">
+            <div class="live-view">
+              <video id="camera-preview" class="live-view__video" width="720" height="960" autoplay muted playsinline aria-label="Live camera preview" hidden></video>
+              <div id="camera-empty" class="live-view__empty">
+                <span class="live-view__corners" aria-hidden="true"></span>
+                <p>Camera preview appears here</p>
+              </div>
+              <span id="recording-indicator" class="recording-indicator" hidden>Recording</span>
+            </div>
+            <div class="camera-panel__controls">
+              <div class="mode-switch" role="group" aria-label="Capture type">
+                <button class="mode-button is-active" id="photo-mode" type="button" aria-pressed="true">Photo</button>
+                <button class="mode-button" id="video-mode" type="button" aria-pressed="false">Video</button>
+              </div>
+              <button class="button button--primary capture-action" id="capture-action" type="button" disabled>Take photo</button>
+            </div>
+          </div>
+          <div class="camera-setup">
+            <button class="button button--secondary" id="camera-toggle" type="button">Allow camera</button>
+            <p id="camera-status" class="status-text" role="status" aria-live="polite">Camera is off. Tap Allow camera when you are ready.</p>
+            <p id="camera-error" class="error-message" role="alert" hidden></p>
+          </div>
+        </div>
+
+        <aside class="session-panel" aria-labelledby="session-title">
+          <div class="session-panel__head">
+            <div>
+              <p class="section-kicker">This device</p>
+              <h2 id="session-title">Your limits</h2>
+            </div>
+          </div>
+          <div class="quota-list">
+            <div class="quota-row">
+              <span>Photos</span>
+              <strong><span id="photo-count">0</span> of 10</strong>
+            </div>
+            <div class="quota-track" aria-hidden="true"><span id="photo-progress"></span></div>
+            <div class="quota-row">
+              <span>Videos</span>
+              <strong><span id="video-count">0</span> of 3</strong>
+            </div>
+            <div class="quota-track" aria-hidden="true"><span id="video-progress"></span></div>
+          </div>
+          <p class="session-note">Delete a capture to free a spot and try again.</p>
+        </aside>
+      </section>
+
+      <section class="gallery-section" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="section-kicker">Your captures</p>
+            <h2 id="gallery-title">Review and save.</h2>
+          </div>
+          <button class="button button--secondary button--delete" id="delete-selected" type="button" disabled>Delete selected</button>
+        </div>
+        <p class="gallery-status" id="gallery-status" role="status" aria-live="polite">Loading your captures.</p>
+        <div class="gallery-filter" role="group" aria-label="Show captures">
+          <button class="filter-button is-active" id="show-photos" type="button" aria-pressed="true">Photos <span id="photo-gallery-count">0</span></button>
+          <button class="filter-button" id="show-videos" type="button" aria-pressed="false">Videos <span id="video-gallery-count">0</span></button>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <p class="gallery-error" id="storage-error" role="alert" hidden></p>
+      </section>
+    </main>
+
+    <footer class="site-footer capture-footer">
+      <a class="wordmark" href="index.html" aria-label="Snapora home">snapora<span aria-hidden="true">.</span></a>
+      <p>Your captures stay in this browser until you download or delete them.</p>
+    </footer>
+  </body>
+</html>
