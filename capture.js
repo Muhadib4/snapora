@@ -240,7 +240,7 @@ async function takePhoto() {
     await addMedia("photo", blob);
     await loadMedia();
     cameraStatus.textContent = `Photo saved. ${currentCount("photo")} of ${PHOTO_LIMIT} photos used.`;
-  } catch {
+  } catch (error) {
     if (error?.name === "QuotaExceededError") {
       await refreshAfterQuota("photo");
     } else {
