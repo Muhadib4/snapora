@@ -249,10 +249,16 @@ p {
 
 h1,
 h2 {
-  /* Georgia gives the page an album-like voice; system sans keeps controls quick to scan. */
+  /* Sans-serif carries the interface; Georgia marks only the words that need emphasis. */
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.serif-accent {
   font-family: var(--serif);
   font-weight: 500;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
 }
 
 .hero h1 {
@@ -414,8 +420,9 @@ h2 {
 
 .preview-limit__number {
   color: #f2a18a;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 28px;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -475,8 +482,9 @@ h2 {
 .limit-number {
   margin: 0;
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(76px, 8vw, 104px);
+  font-weight: 700;
   letter-spacing: -0.08em;
   line-height: 0.9;
 }
@@ -757,9 +765,9 @@ h2 {
 
 .session-panel__head h2 {
   margin-bottom: 22px;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.1;
 }
